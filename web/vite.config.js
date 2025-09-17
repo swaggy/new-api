@@ -24,6 +24,7 @@ const { vitePluginSemi } = pkg;
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/new-api/',
   plugins: [
     {
       name: 'treat-js-files-as-jsx',
