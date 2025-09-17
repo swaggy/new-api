@@ -28,9 +28,9 @@ const SetupCheck = ({ children }) => {
   useEffect(() => {
     if (
       statusState?.status?.setup === false &&
-      location.pathname !== '/setup'
+      location.pathname !== '/new-api/setup'
     ) {
-      window.location.href = '/setup';
+      window.location.href = '/new-api/setup';
     }
   }, [statusState?.status?.setup, location.pathname]);
 
