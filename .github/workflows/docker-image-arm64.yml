@@ -18,7 +18,11 @@ jobs:
 
       - name: Save version info
         run: |
-          git describe --tags > VERSION 
+          if git describe --tags >/dev/null 2>&1; then
+            git describe --tags > VERSION
+          else
+            echo "manual-$(date +'%Y%m%d')-$(git rev-parse --short HEAD)" > VERSION
+          fi 
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
